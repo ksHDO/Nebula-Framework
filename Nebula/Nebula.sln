@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula", "Nebula\Nebula.csproj", "{9CDFC6A2-E8AB-458D-B806-4F06CF08704B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula", "Nebula\Nebula.csproj", "{3D3B17ED-DF65-4D88-AC98-D8160A1E4EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "Samples\Samples.csproj", "{78DC5D80-338E-4702-9A5F-41FEAD5E737F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CDFC6A2-E8AB-458D-B806-4F06CF08704B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CDFC6A2-E8AB-458D-B806-4F06CF08704B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CDFC6A2-E8AB-458D-B806-4F06CF08704B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CDFC6A2-E8AB-458D-B806-4F06CF08704B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3B17ED-DF65-4D88-AC98-D8160A1E4EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3B17ED-DF65-4D88-AC98-D8160A1E4EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3B17ED-DF65-4D88-AC98-D8160A1E4EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3B17ED-DF65-4D88-AC98-D8160A1E4EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DC5D80-338E-4702-9A5F-41FEAD5E737F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DC5D80-338E-4702-9A5F-41FEAD5E737F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DC5D80-338E-4702-9A5F-41FEAD5E737F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DC5D80-338E-4702-9A5F-41FEAD5E737F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
