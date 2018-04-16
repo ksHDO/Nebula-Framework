@@ -106,9 +106,9 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula\Nebula.csproj">
+    <ProjectReference Include="..\Nebula\Void.csproj">
       <Project>{3d3b17ed-df65-4d88-ac98-d8160a1e4ef0}</Project>
-      <Name>Nebula</Name>
+      <Name>Void</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

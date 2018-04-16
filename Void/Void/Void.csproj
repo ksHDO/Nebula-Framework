@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="Debug\CommandAttribute.cs" />
+    <Compile Include="Debug\DebugConsole.cs" />
     <Compile Include="Debug\Debug.cs" />
     <Compile Include="ECS\Component.cs" />
     <Compile Include="ECS\Entity.cs" />

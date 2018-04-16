@@ -1,4 +1,4 @@
-﻿namespace Nebula.ECS
+﻿namespace Void.ECS
 {
     public class Component
     {

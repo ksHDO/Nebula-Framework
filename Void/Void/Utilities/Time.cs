@@ -1,4 +1,4 @@
-﻿namespace Nebula.Utilities
+﻿namespace Void.Utilities
 {
     public class Time
     {
