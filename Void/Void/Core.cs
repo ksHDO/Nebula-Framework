@@ -16,10 +16,7 @@ namespace Void
         public Scene Scene
         {
             get => _currentScene;
-            set
-            {
-                _pendingScene = value;
-            }
+            set => _pendingScene = value;
         }
 
         public Core(string contentDirectory = "Content")
