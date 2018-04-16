@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Void.ECS
@@ -8,9 +9,20 @@ namespace Void.ECS
         public Color ClearColor = Color.CornflowerBlue;
         public GraphicsDevice GraphicsDevice;
 
+        public List<Entity> Entities;
+
+        public void Start()
+        {
+            foreach (var entity in Entities)
+            {
+                entity.Start();   
+            }
+        }
+
+
+
         public void Update()
         {
-
         }
 
         public void Draw(SpriteBatch batch)

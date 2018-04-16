@@ -106,7 +106,7 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula\Void.csproj">
+    <ProjectReference Include="..\Void\Void.csproj">
       <Project>{3d3b17ed-df65-4d88-ac98-d8160a1e4ef0}</Project>
       <Name>Void</Name>
     </ProjectReference>
