@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Samples.Scenes;
 using Void;
 using Void.ECS;
 
@@ -14,7 +15,7 @@ namespace Samples
         
         public Game1()
         {
-            Scene = new Scene();
+            Scene = new BasicScene();
         }
 
         /// <summary>

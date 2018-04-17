@@ -1,4 +1,8 @@
-﻿namespace Void.ECS
+﻿using System;
+using Microsoft.Xna.Framework.Graphics;
+using Void.ECS.Components;
+
+namespace Void.ECS
 {
     public class Component
     {
@@ -21,6 +25,15 @@
             }
         }
 
+        public Transform Transform => Entity.Transform;
+
+        public Entity Entity;
+
+        public T GetComponent<T>() where T : Component
+        {
+            return Entity.GetComponent<T>();
+        }
+
         public virtual void Start()
         {
 
@@ -31,7 +44,7 @@
 
         }
 
-        public virtual void Draw()
+        public virtual void Draw(SpriteBatch batch)
         {
 
         }
@@ -44,6 +57,11 @@
         public virtual void OnDisabled()
         {
 
+        }
+
+        public virtual void End()
+        {
+            
         }
     }
 }

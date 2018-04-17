@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Void.ECS;
 using Void.Utilities;
@@ -38,8 +40,11 @@ namespace Void
             if (_pendingScene != null)
             {
                 _pendingScene.GraphicsDevice = GraphicsDevice;
-
+                _pendingScene.SharedContent = Content;
+                _pendingScene.Content = new ContentManager(Services);
+                _currentScene.End();
                 _currentScene = _pendingScene;
+                _pendingScene.Start();
                 _pendingScene = null;
             }
             _currentScene?.Update();
