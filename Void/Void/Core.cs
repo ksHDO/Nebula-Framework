@@ -35,15 +35,20 @@ namespace Void
 
         protected override void Update(GameTime gameTime)
         {
-            Time.TimeScale = gameTime.TotalGameTime.TotalSeconds;
+            Time.DeltaTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+            Time.ElapsedFixedTime = (float) gameTime.TotalGameTime.TotalSeconds;
 
             if (_pendingScene != null)
             {
                 _pendingScene.GraphicsDevice = GraphicsDevice;
                 _pendingScene.SharedContent = Content;
-                _pendingScene.Content = new ContentManager(Services);
-                _currentScene.End();
+                _pendingScene.Content = new ContentManager(Services)
+                {
+                    RootDirectory = Content.RootDirectory
+                };
+                _currentScene?.End();
                 _currentScene = _pendingScene;
+                _pendingScene.Initialize();
                 _pendingScene.Start();
                 _pendingScene = null;
             }
@@ -52,7 +57,10 @@ namespace Void
 
         protected override void Draw(GameTime gameTime)
         {
-            Time.FixedDeltaTime = gameTime.TotalGameTime.TotalSeconds;
+            Time.FixedDeltaTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+            Time.ElapsedFixedTime = (float) gameTime.TotalGameTime.TotalSeconds;
+            if (SpriteBatch == null)
+                SpriteBatch = new SpriteBatch(GraphicsDevice);
             _currentScene?.Draw(SpriteBatch);
 
             base.Draw(gameTime);

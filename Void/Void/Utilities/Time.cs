@@ -1,23 +1,28 @@
-﻿namespace Void.Utilities
+﻿#define V_Float
+
+namespace Void.Utilities
 {
     public class Time
     {
-        private static double _deltaTime;
-        private static double _fixedDeltaTime;
+        private static float _deltaTime;
+        private static float _fixedDeltaTime;
 
-        public static double DeltaTime
+        public static float ElapsedTime { get; set; }
+        public static float ElapsedFixedTime { get; set; }
+        
+        public static float DeltaTime
         {
             get => _deltaTime * TimeScale;
             set => _deltaTime = value;
         }
 
-        public static double FixedDeltaTime
+        public static float FixedDeltaTime
         {
             get => _fixedDeltaTime * FixedTimeScale;
             set => _fixedDeltaTime = value;
         }
 
-        public static double TimeScale;
-        public static double FixedTimeScale;
+        public static float TimeScale = 1.0f;
+        public static float FixedTimeScale = 1.0f;
     }
 }

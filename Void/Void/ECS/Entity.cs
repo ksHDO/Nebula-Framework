@@ -8,18 +8,22 @@ namespace Void.ECS
     public class Entity
     {
         public string Name { get; set; }
-        private Scene Scene { get; set; }
+        public Scene Scene { get; set; }
         private List<Component> _components;
         public bool IsEnabled { get; set; } = true;
 
         public Transform Transform;
 
-        public Entity(string name)
+        public Entity()
         {
-            Name = name;
             _components = new List<Component>();
 
             Transform = AddComponent<Transform>();
+        }
+
+        public Entity(string name) : this()
+        {
+            Name = name;
         }
 
         public void Start()
