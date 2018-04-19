@@ -25,6 +25,8 @@ namespace Void
         {
             GraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = contentDirectory;
+
+            
         }
 
         protected override void LoadContent()

@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Void.ECS.Components
 {
-    public class Sprite : Component
+    public class Sprite : Renderer
     {
         private readonly Texture2D _texture;
-
+        public Color Color = Color.White;
 
         public Sprite(Texture2D texture)
         {
@@ -15,7 +15,7 @@ namespace Void.ECS.Components
 
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(_texture, Transform.Position, Color.White);
+            batch.Draw(_texture, Transform.Position, Color);
             base.Draw(batch);
         }
     }

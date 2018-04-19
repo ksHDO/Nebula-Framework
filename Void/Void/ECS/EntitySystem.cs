@@ -8,6 +8,10 @@ namespace Void.ECS
 {
     public class EntitySystem
     {
+        public Scene Scene { get; set; }
+        public virtual void Process(List<Entity> entities)
+        {
 
+        }
     }
 }
