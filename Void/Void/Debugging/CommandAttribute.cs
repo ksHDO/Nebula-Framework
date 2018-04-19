@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Debug
+namespace Void.Debugging
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public class CommandAttribute : Attribute

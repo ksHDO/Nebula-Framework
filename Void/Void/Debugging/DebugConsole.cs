@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Nebula.Debug
+namespace Void.Debugging
 {
     public class DebugConsole
     {
