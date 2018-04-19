@@ -25,8 +25,6 @@ namespace Void
         {
             GraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = contentDirectory;
-
-            
         }
 
         protected override void LoadContent()
@@ -49,6 +47,7 @@ namespace Void
                     RootDirectory = Content.RootDirectory
                 };
                 _currentScene?.End();
+                _currentScene?.Dispose();
                 _currentScene = _pendingScene;
                 _pendingScene.Initialize();
                 _pendingScene.Start();

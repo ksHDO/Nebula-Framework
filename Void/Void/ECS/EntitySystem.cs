@@ -8,7 +8,16 @@ namespace Void.ECS
 {
     public class EntitySystem
     {
+        public List<Entity> InvolvedEntities;
+
         public Scene Scene { get; set; }
+        public EntitySelector Selector { get; private set; }
+
+        public EntitySystem(EntitySelector selector)
+        {
+            Selector = selector;
+        }
+
         public virtual void Process(List<Entity> entities)
         {
 

@@ -20,7 +20,11 @@ namespace Void.ECS.Components
             }
         }
 
-        public Vector2 Position => LocalPosition;
+        public Vector2 Position
+        {
+            get => LocalPosition;
+            set => LocalPosition = value;
+        }
 
 
     }

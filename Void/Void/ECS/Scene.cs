@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Void.ECS
 {
-    public class Scene
+    public class Scene : IDisposable
     {
         public Color ClearColor = Color.CornflowerBlue;
         public GraphicsDevice GraphicsDevice;
@@ -14,12 +15,14 @@ namespace Void.ECS
         public ContentManager Content;
 
         private List<Entity> _entities;
+        private EntitySystemsList _entitySystems;
         private int _entityId;
         private string _entityName = "entity";
 
         public Scene()
         {
             _entities = new List<Entity>();
+            _entitySystems = new EntitySystemsList();
         }
 
         public virtual void Initialize()
@@ -34,7 +37,12 @@ namespace Void.ECS
 
         public void Update()
         {
-            _entities.ForEach(e => e.Update());
+            _entities.ForEach(e =>
+            {
+                e.Update();
+            });
+
+            _entitySystems.Process();
         }
 
         public void Draw(SpriteBatch batch)
@@ -63,6 +71,7 @@ namespace Void.ECS
         {
             entity.Scene = this;
             _entities.Add(entity);
+            _entitySystems.AddEntity(entity);
             return entity;
         }
 
@@ -82,6 +91,17 @@ namespace Void.ECS
                 entity.AddComponent(component);
             }
             return entity;
+        }
+
+        public T AddEntitySystem<T>(T system) where T : EntitySystem
+        {
+            _entitySystems.AddSystem(system, _entities);
+            return system;
+        }
+
+        public void Dispose()
+        {
+            Content?.Dispose();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Void.ECS.Components
@@ -7,6 +8,11 @@ namespace Void.ECS.Components
     {
         private readonly Texture2D _texture;
         public Color Color = Color.White;
+
+        public Sprite(ContentManager content, string spritePath)
+        {
+            _texture = content.Load<Texture2D>(spritePath);
+        }
 
         public Sprite(Texture2D texture)
         {

@@ -55,6 +55,8 @@
     <Compile Include="ECS\Components\Transform.cs" />
     <Compile Include="ECS\Entity.cs" />
     <Compile Include="ECS\EntitySystem.cs" />
+    <Compile Include="ECS\EntitySelector.cs" />
+    <Compile Include="ECS\EntitySystemsList.cs" />
     <Compile Include="ECS\Scene.cs" />
     <Compile Include="Input\Input.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
