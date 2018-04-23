@@ -6,6 +6,9 @@ using Void.Debugging;
 namespace Void.ECS
 {
 
+    /// <summary>
+    /// Rules for Entity Systems to determine which Entities to use.
+    /// </summary>
     public class EntitySelector
     {
         private struct ComponentRule
@@ -22,14 +25,23 @@ namespace Void.ECS
             }
         }
 
-        private List<ComponentRule> _componentRules;
+        private readonly List<ComponentRule> _componentRules;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntitySelector"/> class.
+        /// </summary>
         public EntitySelector()
         {
             _componentRules = new List<ComponentRule>();
         }
 
-        public EntitySelector With(params Type[] components)
+        /// <summary>
+        /// Match entities with the passed component types.
+        /// </summary>
+        /// <param name="components">The components.</param>
+        /// <returns></returns>
+        /// <seealso cref="Exclude"/>
+        public EntitySelector Include(params Type[] components)
         {
             // Verify if the component's already excluded?
 
@@ -37,6 +49,12 @@ namespace Void.ECS
             return this;
         }
 
+        /// <summary>
+        /// Excludes entities with the passed component types.
+        /// </summary>
+        /// <param name="components">The components.</param>
+        /// <returns></returns>
+        /// <seealso cref="Include"/>
         public EntitySelector Exclude(params Type[] components)
         {
             // Verify if the component's already included?
@@ -45,6 +63,11 @@ namespace Void.ECS
             return this;
         }
 
+        /// <summary>
+        /// Tests the passed entity with whether it matches the rules set by <see cref="Include"/> and <see cref="Exclude"/>.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <returns></returns>
         public bool TestEntity(Entity entity)
         {
             foreach (var componentRule in _componentRules)

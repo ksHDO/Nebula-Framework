@@ -8,7 +8,7 @@ namespace Samples.Scenes.BasicScene.EntitySystems
 {
     public class PlayerMovementSystem : EntitySystem
     {
-        public PlayerMovementSystem() : base(new EntitySelector().With(typeof(MovementComponent)))
+        public PlayerMovementSystem() : base(new EntitySelector().Include(typeof(MovementComponent)))
         {
         }
 
